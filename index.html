@@ -1,2 +1,89 @@
 <html>
+<script>
+	function getResponse()
+	{
+		var formObj = document.getElementById("mySelect");
+		var height = document.getElementById("height").value;
+		var weight = document.getElementById("weight").value;
+		var athlete = formObj.options[formObj.selectedIndex].text;
+		var results = [height, weight, athlete];
+		return results;
+	}
+	function calculateBmi(results)
+	{
+		var bmi = 703 * (results[1]/(Math.pow(results[0],2)));
+		var result = "foo";
+		console.log(bmi);
+		return bmi;
+	}
+	function displayResults()
+	{
+		var results = getResponse();
+		var bmi = calculateBmi(results);
+		bmi = bmi.toFixed(2);
+		var result = "foo";
+		var picture = "bar";
+		if (bmi < 25)
+		{
+			result = "Normal";
+			picture = "\"normal.gif\"";
+		}
+		else if (bmi >= 25 && bmi < 30)
+		{
+			result = "Overweight";
+			picture = "\"overweight.gif\"";
+		}
+		else if (bmi >= 30 && bmi < 40)
+		{
+			result = "Obese";
+			picture = "\"obese.gif\"";
+		}
+		else if (bmi > 40)
+		{
+			result = "Extremely Obese";
+			picture = "\"extreme.gif\"";
+		}
+		if (results[2] == "Yes")
+		{
+			console.log("yes");
+			var athText = "You have indicated that you are athlete. BMI does not take into account body fat percentage or muscle mass. This means that your BMI may not accurately reflect your health levels and how in shape you are. Typically, athletes will be overweight or obese according to BMI."
+			document.getElementById("results").innerHTML = "<img src=" + picture + ">" + "<br>" + athText + "<br>" + "<img src=\"bmi.gif\">" + "<br>" + "Your BMI is: " +  bmi + "<br>" + "This means that you are " + result; 
+		}
+		else
+		{
+			document.getElementById("results").innerHTML = "<img src=" + picture + ">" + "<br>" + "Your BMI is: " +  bmi + "<br>" + "This means that you are " + result;
+		}
+		console.log(result);
+	}
+</script>
+
+<body>
+  <div id="input">
+      Enter Height in Inches:
+      <input type="number" id="height">
+      <br><br>
+      
+      Enter Weight in Lbs:
+      <input type="number" id="weight">
+      <br><br>
+      
+      Are you an athlete and/or do you workout regularly?
+      <form>
+        <select id="mySelect">
+        	 <option>Yes</option>
+          <option>No</option>
+        </select>
+        <br><br>
+        <input type="button" onclick="displayResults()" value="Find out my BMI">
+		  <br><br>
+      </form>
+  </div>
+  
+	<div id="displayResults">
+	<br><br><br>
+		<p id="results">
+		
+		</p>
+	</div>
+</body>
 </html>
