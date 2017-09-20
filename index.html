@@ -1,4 +1,10 @@
 <html>
+<head>
+	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+
 <script>
 	function getResponse()
 	{
@@ -47,7 +53,7 @@
 		{
 			console.log("yes");
 			var athText = "You have indicated that you are athlete. BMI does not take into account body fat percentage or muscle mass. This means that your BMI may not accurately reflect your health levels and how in shape you are. Typically, athletes will be overweight or obese according to BMI."
-			document.getElementById("results").innerHTML = "<img src=" + picture + ">" + "<br>" + athText + "<br>" + "<img src=\"bmi.gif\">" + "<br>" + "Your BMI is: " +  bmi + "<br>" + "This means that you are " + result; 
+			document.getElementById("results").innerHTML = "<img src=" + picture + ">" + "<br>" + athText + "<br>" + "<img src=\"bmi.gif\">" + "<br>" + "Your BMI is: " +  bmi + "<br>" + "This means that you are " + result;
 		}
 		else
 		{
@@ -56,34 +62,55 @@
 		console.log(result);
 	}
 </script>
+</head>
 
 <body>
-  <div id="input">
-      Enter Height in Inches:
-      <input type="number" id="height">
-      <br><br>
-      
-      Enter Weight in Lbs:
-      <input type="number" id="weight">
-      <br><br>
-      
-      Are you an athlete and/or do you workout regularly?
-      <form>
-        <select id="mySelect">
-        	 <option>Yes</option>
-          <option>No</option>
-        </select>
-        <br><br>
-        <input type="button" onclick="displayResults()" value="Find out my BMI">
-		  <br><br>
-      </form>
-  </div>
-  
-	<div id="displayResults">
-	<br><br><br>
-		<p id="results">
-		
-		</p>
+	<div class="jumbotron text-center">
+  	<h1>What's your BMI?</h1>
 	</div>
+	<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+			<h3>Enter your info</h3>
+			<div id="input">
+		      Enter Height in Inches:
+		      <input type="number" id="height">
+		      <br><br>
+
+		      Enter Weight in Lbs:
+		      <input type="number" id="weight">
+		      <br><br>
+
+		      Are you an athlete and/or do you workout regularly?
+		      <form>
+		        <select id="mySelect">
+		        	 <option>Yes</option>
+		          <option>No</option>
+		        </select>
+		        <br><br>
+		        <input type="button" onclick="displayResults()" value="Find out my BMI">
+				  <br><br>
+		      </form>
+		  </div>
+    </div>
+    <div class="col-sm-4">
+			<h3>Results</h3>
+			<div id="displayResults">
+			<br><br><br>
+				<p id="results">
+
+				</p>
+			</div>
+    </div>
+    <div class="col-sm-4">
+      <h3>Health facts</h3>
+			<ul>
+				<li>eat</li>
+				<li>excersice</li>
+				<li>etc</li>
+			</ul>
+    </div>
+  </div>
+</div>
 </body>
 </html>
