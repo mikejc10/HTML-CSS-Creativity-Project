@@ -59,13 +59,13 @@
 		{
 			console.log("yes");
 			var athText = "<p>You have indicated that you are athlete. BMI does not take into account body fat percentage or muscle mass. This means that your BMI may not accurately reflect your health levels and how in shape you are. Typically, athletes will be overweight or obese according to BMI.</p>"
-			document.getElementById("results").innerHTML = "<img src=" + picture + ">" + "<br>" + athText + "<br>" + "<img src=\"bmi.gif\">" + "<p>Your BMI is: " +  bmi + "</p><br>" + "<p>Here are YOUR " + result+"</p>";
+			document.getElementById("results").innerHTML = "<img src=" + picture + ">" + "<br>" + athText + "<br>" + "<img src=\"bmi.gif\">";
             switchBodyType(result);
             getBmiNumber(bmi);
 		}
 		else
 		{
-			document.getElementById("results").innerHTML = "<img src=" + picture + ">"  + "<p>Your BMI is: " +  bmi + "<br>" + "Here are YOUR " + result+"</p>";
+			document.getElementById("results").innerHTML = "<img src=" + picture + ">";
             switchBodyType(result);
             getBmiNumber(bmi);
 		}
