@@ -1,3 +1,41 @@
+
+
+.big-header{
+    color: burlywood;
+    font-size: 80px;
+}
+
+#displayResults{
+    width: 40%;
+    height: 40%;
+}
+
+img{
+    border: 5px solid blue; 
+    width: 100%;
+    
+}
+
+.my-results{
+    border: 5px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: forestgreen;
+    opacity: .95;
+}
+
+.my-results h2 {
+    color: white;
+}
+
+.my-results h3 {
+    color: white;
+}
+
+.my-results p {
+    color: white;
+}
+
 body{
-  background-color: blue;
+    background-image: image("background.jpeg")
 }
